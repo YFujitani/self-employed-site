@@ -45,3 +45,21 @@ a {
   color: white;
   text-decoration: none;
 }
+
+main h1 {
+  margin: 0;
+  padding-top: 40px;
+  padding-left: 40px;
+  font-size: 24px;
+  color: #91e4fb;
+}
+
+main section {
+  width: 1000px;
+  height: 500px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border-left: 3px solid #ebebeb;
+  border-right: 3px solid #ebebeb;
+  border-bottom: 3px solid #ebebeb;
+}

@@ -5,7 +5,7 @@ body {
 
 header {
   height: 150px;
-  background: #91e4fb;
+  background: #00c8f8;
 }
 
 header .container {
@@ -44,4 +44,18 @@ ul li {
 a {
   color: white;
   text-decoration: none;
+}
+
+main h1 {
+  margin: 0;
+  padding-top: 40px;
+  padding-left: 40px;
+  font-size: 24px;
+  color: #1f1f1f;
+}
+
+main section {
+  width: 1000px;
+  height: 500px;
+  margin: 0 auto;
 }

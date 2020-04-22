@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale= 1">
   <title>藤谷佳正のホームページ</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
 </head>
 
 <body>
@@ -13,14 +15,14 @@
     <div class="container">
       <div class="box"></div>
       <h1>藤谷　佳正</h1>
-      <div id="toggle">
-        <div class="humburger">
+      <div class="toggle">
+        <div id="show">
           <div class="one"></div>
           <div class="two"></div>
           <div class="three"></div>
         </div>
       </div>
-      <ul class="nav">
+      <ul id="nav">
         <li><a href="#about">事業内容</a></li>
         <li><a href="#work">実績紹介</a></li>
         <li><a href="#price">料金例</a></li>
@@ -74,7 +76,20 @@
       </table>
     </section>
   </main>
+  <footer>
+    <p>COPYRIGHT &#169; 2020<br class="sp_br" />   YOSHIMASA FUJITANI ALL RIGHTS RESERVED.</p>
+  </footer>
+  <script>
+    'use strict';
 
+    const show = document.getElementById('show');
+    const nav = document.getElementById('nav');
+
+    show.addEventListener('click', () => {
+      show.classList.toggle('on');
+      nav.classList.toggle('open');
+    });
+  </script>
 </body>
 
 </html>

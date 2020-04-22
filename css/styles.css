@@ -1,17 +1,45 @@
 /* common */
 body {
   margin: 0;
-  font-family: serif;
+  overflow-x: hidden;
 }
 
 header {
-  height: 150px;
   background: #00c8f8;
   color: #ffffff;
+  font-family: "Sawarabi Mincho";
+}
+
+main section h1 {
+  font-family: "Sawarabi Mincho";
+}
+
+main section p {
+  font-family: sans-serif;
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+  line-height: 2.5;
+}
+
+table {
+  font-family: sans-serif;
+}
+
+footer {
+  background: #00c8f8;
+  color: #ffffff;
+  text-align: center;
+  font-family: "Sawarabi Mincho";
+}
+
+footer p {
+  margin: 0;
 }
 
 /* large screen */
-@media (min-width: 1050px) {
+@media (min-width: 830px) {
   header .container {
     width: 1000px;
     height: 150px;
@@ -42,7 +70,7 @@ header {
 
   header ul li {
     display: inline-block;
-    vertical-align: -30%;
+    /* vertical-align: -30%; */
     font-size: 24px;
     list-style: none;
     margin: 0 1em;
@@ -64,20 +92,15 @@ header {
     margin-right: auto;
   }
 
-  main h1 {
+  main section h1 {
+    font-family: "Sawarabi Mincho";
     margin: 0;
     font-size: 24px;
     color: #1f1f1f;
   }
 
   main section p {
-    font-family: sans-serif;
-    margin-top: 1em;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0;
     font-size: 20px;
-    line-height: 2.0;
   }
 
   table {
@@ -101,10 +124,18 @@ header {
   tr td .last {
     border: 0px none;
   }
+
+  footer {
+    line-height: 150px;
+  }
+
+  .sp_br {
+    display: none;
+  }
 }
 
 /* small screen */
-@media (min-width: 320px) and (max-width: 419px) {
+@media (min-width: 320px) and (max-width: 829px) {
   header {
     height: 80px;
   }
@@ -132,14 +163,14 @@ header {
     line-height: 80px;
   }
 
-  #toggle {
+  .toggle {
     flex-direction: row;
     flex-basis: 0%;
     flex-grow: 1;
     position: relative;
   }
 
-  #toggle .humburger {
+  #show {
     width: 30px;
     height: 30px;
     color: transparent;
@@ -149,47 +180,63 @@ header {
     left: 0;
     right: 0;
     margin: auto;
+    cursor: pointer;
   }
 
-  #toggle div .one {
-    width: 30px;
+  #show div {
+    width: 100%;
     height: 4px;
     background: #ffffff;
-    margin-top: 4.5px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 4.5px;
-    transition: 0.3s;
+    margin: 4.5px auto;
+    transition: 0.4s;
+    backface-visibility: hidden;
   }
 
-  #toggle div .two {
-    width: 30px;
-    height: 4px;
-    background: #ffffff;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 4.5px;
-    transition: 0.3s;
+  #show.on .one {
+    transform: rotate(45deg) translate(0, -2px);
+    transform-origin: left top;
   }
 
-  #toggle div .three {
-    width: 30px;
-    height: 4px;
-    background: #ffffff;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 4.5px;
-    transition: 0.3s;
+  #show.on .two {
+    opacity: 0;
   }
 
-  header .nav {
-    display: none;
+  #show.on .three {
+    transform: rotate(-45deg) translate(0, 2px);
+    transform-origin: left bottom;
+  }
+
+  header ul {
+    margin-top: 80px;
+    margin-bottom: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    background: #00c8f8;
+    position: absolute;
+    top: 0;
+    right: -160px;
+    transition: 0.4s;
+  }
+
+  header ul li {
+    font-size: 20px;
+    list-style: none;
+  }
+
+  a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  #nav.open {
+    right: 0;
   }
 
   main section {
     width: 85%;
     padding: 0;
-    margin-top: 2em;
+    margin-top: 3em;
     margin-left: auto;
     margin-right: auto;
   }
@@ -201,18 +248,12 @@ header {
   }
 
   main section p {
-    font-family: sans-serif;
-    margin-top: 1em;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0;
-    line-height: 1.8;
-    font-size: 15px;
+    font-size: 18px;
   }
 
   table {
     width: 100%;
-    font-family: sans-serif;
+    margin-top: 2em;
     table-layout: fixed;
     font-size: 15px;
     border-collapse: collapse;
@@ -229,46 +270,72 @@ header {
     text-align: left;
     height: 2em;
   }
-}
 
-/* small screenでnavが開いているとき */
-/* header ul {
-    margin: 0;
-    padding: 40px;
-    background: #00c8f8;
-    position: absolute;
+  footer {
+    height: 100px;
+    vertical-align: middle;
+  }
+
+  footer p {
+    /* position: absolute;
     top: 0;
     right: 0;
-    box-sizing: border-box;
+    left: 0;
+    bottom: 0;
+    margin: auto; */
+  }
+
+
+
+}
+
+/* medium screen */
+@media (min-width: 830px) and (max-width: 1049px) {
+  header {
+    height: 100px;
+  }
+
+  header .container {
+    width: 85%;
+    height: 100px;
+  }
+
+  header h1 {
+    font-size: 40px;
+    line-height: 100px;
+  }
+
+  header ul {
+    flex-direction: row;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    padding: 0;
+    line-height: 100px;
   }
 
   header ul li {
-    font-size: 40px;
-    list-style: none;
+    /* vertical-align: -25%; */
+    font-size: 20px;
   }
 
-  header ul li:first-child {
-    width: 70px;
-    height: 100%;
-    color: transparent:
-    }
-
-  header ul li div .one {
-    width: 70px;
-    height: 8px;
-    color: #ffffff;
-    /* transform: rotate(45deg); */
-/*
-  }
-.close .two
-      width: 70px;
-      height: 8px;
-      transform: rotate(-45deg);
+  main section {
+    width: 85%;
   }
 
-  a {
-    color: #ffffff;
-    text-decoration: none;
+  main section h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #1f1f1f;
   }
-} */
+
+  main section p {
+    font-size: 18px;
+    line-height: 2.0;
+  }
+
+  table {
+    font-size: 18px;
+    width: 100%;
+  }
 }

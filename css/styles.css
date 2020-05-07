@@ -12,7 +12,7 @@ body {
 header {
   background: #00c8f8;
   color: #ffffff;
-  font-family: "Sawarabi Mincho", "serif";
+  font-family: "YuMincho", "serif";
 }
 
 main {
@@ -20,7 +20,7 @@ main {
 }
 
 main section h1 {
-  font-family: "Sawarabi Mincho", "serif";
+  font-family: "YuMincho", "serif";
 }
 
 main section p {
@@ -127,7 +127,6 @@ footer p {
   }
 
   main section h1 {
-    font-family: "Sawarabi Mincho";
     margin: 0;
     font-size: 24px;
   }

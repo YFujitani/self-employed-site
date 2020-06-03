@@ -12,15 +12,15 @@ body {
 header {
   background: #00c8f8;
   color: #ffffff;
-  font-family: "Sawarabi Mincho";
+  font-family: 'Noto Serif JP', serif;
 }
 
 main section h1 {
-  font-family: "Sawarabi Mincho";
+  font-family: 'Noto Serif JP', serif;
 }
 
 main section p {
-  font-family: sans-serif;
+  font-family: 'Noto Serif JP', serif;
   margin-top: 1em;
   margin-left: auto;
   margin-right: auto;
@@ -29,7 +29,7 @@ main section p {
 }
 
 table {
-  font-family: sans-serif;
+  font-family: 'Noto Serif JP', serif;
   margin: 2em 0;
   width: 100%;
   border-spacing: 0;
@@ -57,7 +57,7 @@ footer {
   background: #00c8f8;
   color: #ffffff;
   text-align: center;
-  font-family: "Sawarabi Mincho";
+  font-family: 'Noto Serif JP', serif;
 }
 
 footer p {
@@ -119,7 +119,6 @@ footer p {
   }
 
   main section h1 {
-    font-family: "Sawarabi Mincho";
     margin: 0;
     font-size: 24px;
     color: #1f1f1f;
@@ -230,6 +229,7 @@ footer p {
     top: 0;
     right: -160px;
     transition: 0.4s;
+    line-height: 2.5;
   }
 
   header ul li {

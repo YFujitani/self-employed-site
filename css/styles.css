@@ -28,6 +28,15 @@ main section p {
   line-height: 2.5;
 }
 
+main section .pic {
+  text-align: center;
+}
+
+main section .pic img {
+  width: 90%;
+  opacity: 0.8;
+}
+
 table {
   font-family: 'Noto Serif JP', serif;
   margin: 2em 0;
@@ -124,8 +133,25 @@ footer p {
     color: #1f1f1f;
   }
 
+  main section .container {
+    display: flex;
+  }
+
+  main section .info {
+    flex-direction: row;
+    flex-basis: 0%;
+    flex-grow: 2;
+  }
+
   main section p {
     font-size: 20px;
+  }
+
+  main section .pic {
+    flex-direction: row;
+    flex-basis: 0%;
+    flex-grow: 1;
+    text-align: right;
   }
 
   table {
@@ -264,6 +290,14 @@ footer p {
     font-size: 18px;
   }
 
+  /* iPad */
+  @media (min-width: 768px) and (max-width: 829px) {
+    main section .pic {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
   footer {
     height: 130px;
     position: relative;
@@ -288,7 +322,7 @@ footer p {
   }
 
   header .container {
-    width: 85%;
+    width: 810px;
     height: 100px;
   }
 
@@ -312,7 +346,7 @@ footer p {
   }
 
   main section {
-    width: 85%;
+    width: 810px;
   }
 
   main section h1 {
@@ -324,6 +358,10 @@ footer p {
   main section p {
     font-size: 18px;
     line-height: 2.0;
+  }
+
+  main section .pic img {
+    width: 93%;
   }
 
   table {

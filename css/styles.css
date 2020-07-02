@@ -39,7 +39,6 @@ main section .pic img {
 
 table {
   font-family: 'Noto Serif JP', serif;
-  margin: 2em 0;
   width: 100%;
   border-spacing: 0;
   border-collapse: collapse;
@@ -175,27 +174,22 @@ footer p {
 /* small screen */
 @media (min-width: 320px) and (max-width: 829px) {
   header {
-    height: 80px;
-  }
-
-  header .container {
     width: 100%;
     height: 80px;
-    display: flex;
     position: relative;
   }
 
-  header .box {
-    flex-direction: row;
-    flex-basis: 0%;
-    flex-grow: 1;
+  header .container {
+    width: 85%;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
   }
 
   header h1 {
     flex-direction: row;
     flex-basis: 0%;
     flex-grow: 2;
-    text-align: center;
     font-size: 30px;
     margin: 0;
     line-height: 80px;
@@ -215,7 +209,7 @@ footer p {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;
+    /* left: 0; */
     right: 0;
     margin: auto;
     cursor: pointer;
@@ -223,15 +217,15 @@ footer p {
 
   #show div {
     width: 100%;
-    height: 4px;
+    height: 2px;
     background: #ffffff;
-    margin: 4.5px auto;
+    margin: 6px auto;
     transition: 0.4s;
     backface-visibility: hidden;
   }
 
   #show.on .one {
-    transform: rotate(45deg) translate(0, -2px);
+    transform: rotate(45deg) translate(0, -3px);
     transform-origin: left top;
   }
 
@@ -240,7 +234,7 @@ footer p {
   }
 
   #show.on .three {
-    transform: rotate(-45deg) translate(0, 2px);
+    transform: rotate(-45deg) translate(0, 3px);
     transform-origin: left bottom;
   }
 
@@ -282,12 +276,16 @@ footer p {
 
   main section h1 {
     margin: 0;
-    text-align: center;
+    /* text-align: center; */
     font-size: 22px;
   }
 
   main section p {
     font-size: 18px;
+  }
+
+  main section .pic img {
+    width: 100%;
   }
 
   /* iPad */

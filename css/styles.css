@@ -12,15 +12,15 @@ body {
 header {
   background: #00c8f8;
   color: #ffffff;
-  font-family: "Sawarabi Mincho";
+  font-family: 'Noto Serif JP', serif;
 }
 
 main section h1 {
-  font-family: "Sawarabi Mincho";
+  font-family: 'Noto Serif JP', serif;
 }
 
 main section p {
-  font-family: sans-serif;
+  font-family: 'Noto Serif JP', serif;
   margin-top: 1em;
   margin-left: auto;
   margin-right: auto;
@@ -28,9 +28,17 @@ main section p {
   line-height: 2.5;
 }
 
+main section .pic {
+  text-align: center;
+}
+
+main section .pic img {
+  width: 90%;
+  opacity: 0.8;
+}
+
 table {
-  font-family: sans-serif;
-  margin: 2em 0;
+  font-family: 'Noto Serif JP', serif;
   width: 100%;
   border-spacing: 0;
   border-collapse: collapse;
@@ -57,7 +65,7 @@ footer {
   background: #00c8f8;
   color: #ffffff;
   text-align: center;
-  font-family: "Sawarabi Mincho";
+  font-family: 'Noto Serif JP', serif;
 }
 
 footer p {
@@ -119,14 +127,30 @@ footer p {
   }
 
   main section h1 {
-    font-family: "Sawarabi Mincho";
     margin: 0;
     font-size: 24px;
     color: #1f1f1f;
   }
 
+  main section .container {
+    display: flex;
+  }
+
+  main section .info {
+    flex-direction: row;
+    flex-basis: 0%;
+    flex-grow: 2;
+  }
+
   main section p {
     font-size: 20px;
+  }
+
+  main section .pic {
+    flex-direction: row;
+    flex-basis: 0%;
+    flex-grow: 1;
+    text-align: right;
   }
 
   table {
@@ -150,27 +174,22 @@ footer p {
 /* small screen */
 @media (min-width: 320px) and (max-width: 829px) {
   header {
-    height: 80px;
-  }
-
-  header .container {
     width: 100%;
     height: 80px;
-    display: flex;
     position: relative;
   }
 
-  header .box {
-    flex-direction: row;
-    flex-basis: 0%;
-    flex-grow: 1;
+  header .container {
+    width: 85%;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
   }
 
   header h1 {
     flex-direction: row;
     flex-basis: 0%;
     flex-grow: 2;
-    text-align: center;
     font-size: 30px;
     margin: 0;
     line-height: 80px;
@@ -190,7 +209,7 @@ footer p {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;
+    /* left: 0; */
     right: 0;
     margin: auto;
     cursor: pointer;
@@ -198,15 +217,15 @@ footer p {
 
   #show div {
     width: 100%;
-    height: 4px;
+    height: 2px;
     background: #ffffff;
-    margin: 4.5px auto;
+    margin: 6px auto;
     transition: 0.4s;
     backface-visibility: hidden;
   }
 
   #show.on .one {
-    transform: rotate(45deg) translate(0, -2px);
+    transform: rotate(45deg) translate(0, -3px);
     transform-origin: left top;
   }
 
@@ -215,7 +234,7 @@ footer p {
   }
 
   #show.on .three {
-    transform: rotate(-45deg) translate(0, 2px);
+    transform: rotate(-45deg) translate(0, 3px);
     transform-origin: left bottom;
   }
 
@@ -230,6 +249,7 @@ footer p {
     top: 0;
     right: -160px;
     transition: 0.4s;
+    line-height: 2.5;
   }
 
   header ul li {
@@ -256,12 +276,24 @@ footer p {
 
   main section h1 {
     margin: 0;
-    text-align: center;
+    /* text-align: center; */
     font-size: 22px;
   }
 
   main section p {
     font-size: 18px;
+  }
+
+  main section .pic img {
+    width: 100%;
+  }
+
+  /* iPad */
+  @media (min-width: 768px) and (max-width: 829px) {
+    main section .pic {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   footer {
@@ -288,7 +320,7 @@ footer p {
   }
 
   header .container {
-    width: 85%;
+    width: 810px;
     height: 100px;
   }
 
@@ -312,7 +344,7 @@ footer p {
   }
 
   main section {
-    width: 85%;
+    width: 810px;
   }
 
   main section h1 {
@@ -324,6 +356,10 @@ footer p {
   main section p {
     font-size: 18px;
     line-height: 2.0;
+  }
+
+  main section .pic img {
+    width: 93%;
   }
 
   table {
